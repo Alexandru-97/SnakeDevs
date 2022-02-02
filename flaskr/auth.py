@@ -10,9 +10,12 @@ from db import get_db
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
-@bp.route('/register', methods=['POST'])
+@bp.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render_template('auth/register.html')
+
+    elif request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         db = get_db()
@@ -34,14 +37,17 @@ def register():
         else:
             return redirect(url_for("auth.login"))
 
-    return jsonify({'status': 'user registered succesfully'}), 200
-
-    # return render_template('auth/register.html')
+        return jsonify({'status': 'user registered succesfully'}), 200
 
 
-@bp.route('/login', methods=['POST'])
+
+
+@bp.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render_template('auth/login.html')
+
+    elif request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         db = get_db()
@@ -60,7 +66,7 @@ def login():
     return jsonify({'status': 'user logged in succesfully'}), 200
 
 
-    # return render_template('auth/login.html')
+
 
 
 @bp.before_app_request

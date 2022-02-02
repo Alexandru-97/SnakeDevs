@@ -51,8 +51,8 @@ def create_app():
             thread.start()
         return 'Hello User, not World!'
 
-   # with app.app_context():
-    #    db.init_db()
+    #with app.app_context():
+        #db.init_db()
     db.init_app(app)
     app.register_blueprint(auth.bp)
     app.register_blueprint(environment.bp)
