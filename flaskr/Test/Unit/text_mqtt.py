@@ -4,6 +4,9 @@ from app import create_mqtt_app, create_app
 from paho.mqtt.client import MQTT_ERR_SUCCESS
 
 
+# python -m pytest -v Test/Unit/test_mqtt.py
+
+
 @pytest.fixture()
 def client():
     create_app()

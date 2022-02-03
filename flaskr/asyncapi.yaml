@@ -1,0 +1,49 @@
+asyncapi: 2.2.0
+# pentru validare: https://playground.asyncapi.io/
+info:
+  title: SnakeDevs-SmartFridge
+  version: "1.0"
+
+servers:
+  development:
+    url: tcp://localhost:1883
+    description: Mosquitto Server
+    protocol: mqtt
+
+channels:
+  temperature:
+    description: Valoarea temperaturii
+    publish:
+      message:
+        $ref: "#/components/messages/temperature"
+
+
+  door_status:
+    description: Senzor de inchidere a usii
+    publish:
+      message:
+        $ref: "#/components/messages/door_status"
+
+
+
+components:
+  messages:
+    temperature:
+      name: temperature
+      description: Valoarea temperaturii
+      payload:
+        type: integer
+        examples:
+          - 0
+          - 1
+          - 2
+
+    door_status:
+      name: door_status
+      description: Countdown pentru usa deschisa (daca este constant, usa este inchisa)
+      payload:
+        type: integer
+        examples:
+          - 1
+          - 10
+          - 30

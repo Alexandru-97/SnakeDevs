@@ -78,5 +78,12 @@ def get_timer():
         ' FROM timer'
         ' ORDER BY timestamp DESC'
     ).fetchone()
-    return  timer['is_closed'], timer['time']
+    return timer['is_closed'], timer['time']
 
+def get_temp():
+    temp = get_db().execute(
+        'SELECT id, timestamp, value'
+        ' FROM temperature'
+        ' ORDER BY timestamp DESC'
+    ).fetchone()
+    return temp['value']

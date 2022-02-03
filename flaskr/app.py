@@ -86,6 +86,8 @@ def create_mqtt_app():
 
 def background_thread():
     count = 0
+    topic1 = "door_status"
+    topic2 = "temperature"
     # is_closed, time_to_close =
     with app.app_context():
         is_closed, time_to_close = status.get_timer()
@@ -104,15 +106,20 @@ def background_thread():
             else:
                 count = 0
                 message = str(time_to_close)
-            result = mqtt.publish('python/mqtt', message)
-        # result: [0, 1]
+            result = mqtt.publish(topic1, message)
             ok = result[0]
             if ok == 0:
-                print(f"Send `{message}` to topic")
+                print(f"Send `{message}` to topic '{topic1}'")
             else:
-                print(f"Failed to send message to topic {topic}")
-
-
+                print(f"Failed to send message to topic")
+            temp = status.get_temp()
+            message2 = str(temp)
+            result = mqtt.publish(topic2, message2)
+            ok = result[0]
+            if ok == 0:
+                print(f"Send `{message2}` to topic '{topic2}'")
+            else:
+                print(f"Failed to send message to topic '{topic2}'")
 
 def run_socketio_app():
     create_app()

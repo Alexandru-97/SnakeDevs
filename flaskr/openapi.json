@@ -30,22 +30,22 @@
         "operationId": "register",
         "description": "Register new users",
         "tags": [
-            "auth"
+          "auth"
         ],
-        "requestBody":{
+        "requestBody": {
           "description": "",
           "required": true,
           "content": {
-            "application/json":{
-              "schema":{
+            "application/json": {
+              "schema": {
                 "$ref": "#/components/schemas/RegistrationRequestData"
               }
             }
           }
         },
         "responses": {
-          "200":{
-            "$ref": "#/components/responses/SuccessfullRegister"
+          "200": {
+            "$ref": "#/components/responses/SuccessfulRegister"
           },
           "403": {
             "$ref": "#/components/responses/FailedRegistration"
@@ -61,9 +61,20 @@
         "tags": [
           "auth"
         ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequestData"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
-            "$ref": "#/components/responses/SuccessfullLogin"
+            "$ref": "#/components/responses/SuccessfulLogin"
           },
           "403": {
             "$ref": "#/components/responses/FailedLogin"
@@ -71,18 +82,17 @@
         }
       }
     },
-
-    "/rgb":{
-      "get":{
+    "/rgb/": {
+      "get": {
         "summary": "Get the rgb values at the moment in the fridge",
         "operationId": "set_rgb",
         "description": "Get the current rgb values at which the fridge is set",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully retrieved rgb values",
+            "description": "Successfully retrieved rgb values",
             "content": {
               "application/json": {
                 "schema": {
@@ -93,27 +103,27 @@
           }
         }
       },
-      "post":{
+      "post": {
         "summary": "Change the rgb values at the moment in the fridge",
         "operationId": "get_rgb",
         "description": "Set the current rgb values",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "requestBody":{
+        "requestBody": {
           "description": "",
           "required": true,
           "content": {
-            "application/json":{
-              "schema":{
+            "application/json": {
+              "schema": {
                 "$ref": "#/components/schemas/RGBRequestData"
               }
             }
           }
         },
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully modified rgb values",
+            "description": "Successfully modified rgb values",
             "content": {
               "application/json": {
                 "schema": {
@@ -124,19 +134,18 @@
           }
         }
       }
-
     },
-    "/timer":{
-      "get":{
+    "/timer/": {
+      "get": {
         "summary": "Get the timer for door closing",
         "operationId": "get_timer",
         "description": "Get the current timer(s) value at which the fridge is set",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully retrieved timer value",
+            "description": "Successfully retrieved timer value",
             "content": {
               "application/json": {
                 "schema": {
@@ -147,27 +156,27 @@
           }
         }
       },
-      "post":{
+      "post": {
         "summary": "Set the timer for door closing",
         "operationId": "set_timer",
         "description": "Set the current timer(s) value",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "requestBody":{
+        "requestBody": {
           "description": "",
           "required": true,
           "content": {
-            "application/json":{
-              "schema":{
+            "application/json": {
+              "schema": {
                 "$ref": "#/components/schemas/TimerRequestData"
               }
             }
           }
         },
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully modified timer value",
+            "description": "Successfully modified timer value",
             "content": {
               "application/json": {
                 "schema": {
@@ -178,19 +187,18 @@
           }
         }
       }
-
     },
-    "/holiday":{
-      "get":{
+    "/holiday/": {
+      "get": {
         "summary": "Get the holiday value at the moment in the fridge",
         "operationId": "get_holiday",
         "description": "Get the current holiday mode value at which the fridge is set",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully retrieved holiday value",
+            "description": "Successfully retrieved holiday value",
             "content": {
               "application/json": {
                 "schema": {
@@ -201,27 +209,27 @@
           }
         }
       },
-        "post":{
+      "post": {
         "summary": "Set the holiday value at the moment in the fridge",
         "operationId": "set_holiday",
         "description": "Set the current holiday mode value",
-        "tags":[
+        "tags": [
           "functions"
         ],
-          "requestBody":{
+        "requestBody": {
           "description": "",
           "required": true,
           "content": {
-            "application/json":{
-              "schema":{
+            "application/json": {
+              "schema": {
                 "$ref": "#/components/schemas/HolidayRequestData"
               }
             }
           }
         },
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully modified holiday value",
+            "description": "Successfully modified holiday value",
             "content": {
               "application/json": {
                 "schema": {
@@ -232,19 +240,18 @@
           }
         }
       }
-
     },
-    "/temperature":{
-      "get":{
+    "/temperature/": {
+      "get": {
         "summary": "Get the temperature value at the moment in the fridge",
         "operationId": "get_temperature",
         "description": "Get the current temperature(C) value at which the fridge is set",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully retrieved temperature value",
+            "description": "Successfully retrieved temperature value",
             "content": {
               "application/json": {
                 "schema": {
@@ -255,27 +262,27 @@
           }
         }
       },
-      "post":{
+      "post": {
         "summary": "Set the temperature value at the moment in the fridge",
         "operationId": "set_temperature",
         "description": "Set the current temperature(C) value at which the fridge is set",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "requestBody":{
+        "requestBody": {
           "description": "",
           "required": true,
           "content": {
-            "application/json":{
-              "schema":{
+            "application/json": {
+              "schema": {
                 "$ref": "#/components/schemas/TemperatureRequestData"
               }
             }
           }
         },
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully modified temperature value",
+            "description": "Successfully modified temperature value",
             "content": {
               "application/json": {
                 "schema": {
@@ -286,19 +293,18 @@
           }
         }
       }
-
     },
-    "/stock":{
-      "get":{
+    "/stock/": {
+      "get": {
         "summary": "Get the stock at the moment in the fridge",
         "operationId": "get_stock",
         "description": "Get the current stock at which the fridge is set",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully retrieved stock",
+            "description": "Successfully retrieved stock",
             "content": {
               "application/json": {
                 "schema": {
@@ -309,27 +315,27 @@
           }
         }
       },
-      "post":{
+      "post": {
         "summary": "Set the stock at the moment in the fridge",
         "operationId": "set_stock",
         "description": "Add products in the current stock",
-        "tags":[
+        "tags": [
           "functions"
         ],
-        "requestBody":{
+        "requestBody": {
           "description": "",
           "required": true,
           "content": {
-            "application/json":{
-              "schema":{
+            "application/json": {
+              "schema": {
                 "$ref": "#/components/schemas/StockRequestData"
               }
             }
           }
         },
-        "responses":{
+        "responses": {
           "200": {
-            "description": "Succesfully added in stock",
+            "description": "Successfully added in stock",
             "content": {
               "application/json": {
                 "schema": {
@@ -340,200 +346,199 @@
           }
         }
       }
-
     }
-
-
   },
   "components": {
     "schemas": {
-      "StatusResponse":{
+      "StatusResponse": {
         "type": "object",
-        "properties":{
-          "status":{
+        "properties": {
+          "status": {
             "type": "string"
           }
         }
       },
-      "RegistrationRequestData":{
+      "RegistrationRequestData": {
         "type": "object",
-        "properties":{
+        "properties": {
           "username": {
             "type": "string"
           },
-          "password":{
-            "type":"string"
+          "password": {
+            "type": "string"
           }
         }
       },
-      "RGBRequestData":{
+      "RGBRequestData": {
         "type": "object",
-        "properties":{
-              "red":{
-                "type":"integer"
-              },
-              "green":{
-                "type":"integer"
-              },
-              "blue":{
-                "type":"integer"
-            }
-          }
-        },
-      "RGBResponse":{
-        "type": "object",
-        "properties":{
-          "status": {
-            "type": "string"
+        "properties": {
+          "red": {
+            "type": "integer"
           },
-          "data":{
-            "type":"object",
-            "properties":{
-              "red":{
-                "type":"integer"
-              },
-              "green":{
-                "type":"integer"
-              },
-              "blue":{
-                "type":"integer"
-              }
-            }
+          "green": {
+            "type": "integer"
+          },
+          "blue": {
+            "type": "integer"
           }
         }
       },
-       "TemperatureRequestData":{
+      "RGBResponse": {
         "type": "object",
-        "properties":{
-              "value":{
-                "type":"integer"
-              }
-          }
-        },
-      "TemperatureResponse":{
-        "type": "object",
-        "properties":{
+        "properties": {
           "status": {
             "type": "string"
           },
-          "data":{
-            "type":"object",
-            "properties":{
-              "temperature":{
-                "type":"integer"
+          "data": {
+            "type": "object",
+            "properties": {
+              "red": {
+                "type": "integer"
+              },
+              "green": {
+                "type": "integer"
+              },
+              "blue": {
+                "type": "integer"
               }
             }
           }
         }
       },
-       "HolidayRequestData":{
+      "TemperatureRequestData": {
         "type": "object",
-        "properties":{
-              "is_away":{
-                "type":"bool"
-              },
-              "days":{
-                "type":"integer"
-              }
+        "properties": {
+          "value": {
+            "type": "integer"
           }
-        },
-      "HolidayResponse":{
+        }
+      },
+      "TemperatureResponse": {
         "type": "object",
-        "properties":{
+        "properties": {
           "status": {
             "type": "string"
           },
-          "data":{
-            "type":"object",
-            "properties":{
-              "is_away":{
-                "type":"bool"
-              },
-              "days":{
-                "type":"integer"
+          "data": {
+            "type": "object",
+            "properties": {
+              "temperature": {
+                "type": "integer"
               }
             }
           }
         }
       },
-       "TimerRequestData":{
+      "HolidayRequestData": {
         "type": "object",
-        "properties":{
-              "is_closed":{
-                "type":"bool"
-              },
-              "time":{
-                "type":"integer"
-              }
+        "properties": {
+          "is_away": {
+            "type": "boolean"
+          },
+          "days": {
+            "type": "integer"
           }
-        },
-      "TimerResponse":{
+        }
+      },
+      "HolidayResponse": {
         "type": "object",
-        "properties":{
+        "properties": {
           "status": {
             "type": "string"
           },
-          "data":{
-            "type":"object",
-            "properties":{
-              "is_closed":{
-                "type":"bool"
+          "data": {
+            "type": "object",
+            "properties": {
+              "is_away": {
+                "type": "boolean"
               },
-              "time":{
-                "type":"integer"
+              "days": {
+                "type": "integer"
               }
             }
           }
         }
       },
-       "StockRequestData":{
+      "TimerRequestData": {
         "type": "object",
-        "properties":{
-              "product_name":{
-                "type":"string"
-              },
-              "quantity":{
-                "type":"integer"
-              },
-              "product_expiration_date":{
-                "type":"string"
-            },
-              "shelf_number":{
-                "type":"integer"
-            }
+        "properties": {
+          "is_closed": {
+            "type": "boolean"
+          },
+          "time": {
+            "type": "integer"
+          }
         }
-        },
-      "StockResponse":{
+      },
+      "TimerResponse": {
         "type": "object",
-        "properties":{
+        "properties": {
           "status": {
             "type": "string"
           },
-          "data":{
-            "type":"list",
-            "properties":{
-              "product_name":{
-                "type":"string"
+          "data": {
+            "type": "object",
+            "properties": {
+              "is_closed": {
+                "type": "boolean"
               },
-              "quantity":{
-                "type":"integer"
-              },
-              "product_expiration_date":{
-                "type":"string"
-            },
-              "shelf_number":{
-                "type":"integer"
+              "time": {
+                "type": "integer"
+              }
             }
+          }
+        }
+      },
+      "StockRequestData": {
+        "type": "object",
+        "properties": {
+          "product_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "product_expiration_date": {
+            "type": "string"
+          },
+          "shelf_number": {
+            "type": "integer"
+          }
+        }
+      },
+      "StockResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "data": {
+
+            "type": "array",
+            "items": {
+              "properties": {
+                "product_name": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "integer"
+                },
+                "product_expiration_date": {
+                  "type": "string"
+                },
+                "shelf_number": {
+                  "type": "integer"
+                }
+              }
             }
+
           }
         }
       }
-
-    }
     },
     "responses": {
-      "SuccessfullRegister": {
-        "description":"New user has successfully registered",
+      "SuccessfulRegister": {
+        "description": "New user has successfully registered",
         "content": {
           "application/json": {
             "schema": {
@@ -543,7 +548,7 @@
         }
       },
       "FailedRegistration": {
-        "description":"Authentication failed",
+        "description": "Authentication failed",
         "content": {
           "application/json": {
             "schema": {
@@ -552,8 +557,8 @@
           }
         }
       },
-      "SuccessfullLogin": {
-        "description":"New user has successfully logged in",
+      "SuccessfulLogin": {
+        "description": "New user has successfully logged in",
         "content": {
           "application/json": {
             "schema": {
@@ -563,7 +568,7 @@
         }
       },
       "FailedLogin": {
-        "description":"Login failed",
+        "description": "Login failed",
         "content": {
           "application/json": {
             "schema": {
@@ -572,9 +577,9 @@
           }
         }
       },
-      "SuccessfulRGB":{
-        "description":"Successfully retrieved/recorder rgb values",
-        "content":{
+      "SuccessfulRGB": {
+        "description": "Successfully retrieved/recorder rgb values",
+        "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/RGBResponse"
@@ -582,9 +587,9 @@
           }
         }
       },
-      "SuccessfulTemperature":{
-        "description":"Successfully retrieved/recorded the temperature",
-        "content":{
+      "SuccessfulTemperature": {
+        "description": "Successfully retrieved/recorded the temperature",
+        "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/TemperatureResponse"
@@ -592,9 +597,9 @@
           }
         }
       },
-      "SuccessfulHoliday":{
-        "description":"Successfully retrieved/recorder the holiday mode",
-        "content":{
+      "SuccessfulHoliday": {
+        "description": "Successfully retrieved/recorder the holiday mode",
+        "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/HolidayResponse"
@@ -602,9 +607,9 @@
           }
         }
       },
-      "SuccessfulTimer":{
-        "description":"Successfully retrieved/recorded the timer value",
-        "content":{
+      "SuccessfulTimer": {
+        "description": "Successfully retrieved/recorded the timer value",
+        "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/TimerResponse"
@@ -612,9 +617,9 @@
           }
         }
       },
-      "SuccessfulStock":{
-        "description":"Successfully retrieved/recorder the stock",
-        "content":{
+      "SuccessfulStock": {
+        "description": "Successfully retrieved/recorder the stock",
+        "content": {
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/StockResponse"
@@ -624,3 +629,4 @@
       }
     }
   }
+}
